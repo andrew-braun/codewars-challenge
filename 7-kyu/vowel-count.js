@@ -6,7 +6,7 @@ We will consider a, e, i, o, u as vowels for this Kata (but not y).
 The input string will only consist of lower case letters and/or spaces.
 */
 
-const vowelCount = (str) => {
+const getCount = (str) => {
 	const vowels = ["a", "e", "i", "o", "u"];
 
 	return str
@@ -18,4 +18,4 @@ const vowelCount = (str) => {
 		}, 0);
 };
 
-console.log(vowelCount("Hi there!")); // 3
+console.log(getCount("Hi there!")); // 3
