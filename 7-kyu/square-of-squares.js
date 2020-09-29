@@ -9,7 +9,7 @@ The tests will always use some integral number, so don't worry about that in dyn
 
 const isSquare = (num) => {
     const sqrt = Math.sqrt(num);
-    return (sqrt=== Math.floor(sqrt))
+    return (sqrt === Math.floor(sqrt))
 }
 
 console.log(isSquare(4));
