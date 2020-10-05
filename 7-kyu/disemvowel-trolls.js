@@ -13,9 +13,18 @@ Note: for this kata y isn't considered a vowel.
 */
 
 function disemvowel(str) {
-    return str.split("").filter(char => {
-        return /[^aeiou]/i.test(char)
-    }).join("")
+	return str.replace(/[aeiou]/gi, "");
 }
 
-  console.log(disemvowel("This website is for losers LOL!"));
+console.log(disemvowel("This website is for losers LOL!"));
+
+
+/* Original solution, using filter */
+function disemvowelFilter(str) {
+	return str
+		.split("")
+		.filter((char) => {
+			return /[^aeiou]/i.test(char);
+		})
+		.join("");
+}
