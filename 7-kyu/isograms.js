@@ -8,6 +8,18 @@ isIsogram("moOse") == false // -- ignore letter case
 */
 
 function isIsogram(str) {
+	const charSet = new Set(str.toLowerCase());
+	return charSet.size === str.length;
+}
+
+console.log(isIsogram("isogram"));
+console.log(isIsogram("beer"));
+
+/**
+ * ! Original solution, O(n^2); complex compared to better O(n) above
+ * */
+
+function isIsogramFilter(str) {
 	const arr = str.toLowerCase().split("");
 	for (char of arr) {
 		if (arr.filter((filterChar) => filterChar === char).length > 1) {
@@ -17,4 +29,5 @@ function isIsogram(str) {
 	return true;
 }
 
-console.log(isIsogram("isogram"));
+console.log(isIsogramFilter("isogram"));
+console.log(isIsogramFilter("beer"));
