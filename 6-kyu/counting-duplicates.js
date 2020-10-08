@@ -15,19 +15,14 @@ Example
 
 function duplicateCount(str) {
 	const arrayToCheck = str.toLowerCase().split("");
-	let checkedChars = [];
-	let duplicateCount = 0;
+	let duplicates = [];
 
 	for (char of arrayToCheck) {
-		if (
-			arrayToCheck.indexOf(char) !== arrayToCheck.lastIndexOf(char) &&
-			!checkedChars.includes(char)
-		) {
-			duplicateCount++;
-			checkedChars.push(char);
+		if (arrayToCheck.indexOf(char) !== arrayToCheck.lastIndexOf(char)) {
+			duplicates.push(char);
 		}
 	}
-	return duplicateCount;
+	return new Set(duplicates).size;
 }
 
 console.log(duplicateCount("ababcdee"));
