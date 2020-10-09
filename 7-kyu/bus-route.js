@@ -16,8 +16,8 @@ The second value in the first integer array is 0, since the bus is empty in the 
 */
 
 const number = (busStops) => {
-	return busStops.reduce((acc, currentVal) => {
-		return acc + (currentVal[0] - currentVal[1]);
+	return busStops.reduce((riderCount, [boarded, deboarded]) => {
+		return riderCount + (boarded - deboarded);
 	}, 0);
 };
 
