@@ -15,27 +15,13 @@ iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers a
 function iqTest(numbers) {
 	const arr = numbers.split(" ").filter((char) => char !== " ");
 
-	let evenCount = arr.filter((num) => {
-		return num % 2 === 0;
-	}).length;
+	const isEvenArray =
+		arr.filter((num) => {
+			return num % 2 === 0;
+		}).length ===
+		arr.length - 1;
 
-	if (evenCount === arr.length - 1) {
-		return (
-			arr.findIndex((num, idx) => {
-				if (num % 2 !== 0) {
-					return idx + 1;
-				}
-			}) + 1
-		);
-	} else {
-		return (
-			arr.findIndex((num, idx) => {
-				if (num % 2 === 0) {
-					return idx + 1;
-				}
-			}) + 1
-		);
-	}
+	return arr.map((num) => (num % 2 === 0) === isEvenArray).indexOf(false) + 1;
 }
 
 console.log(iqTest("2 4 7 8 10"));
