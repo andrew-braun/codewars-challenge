@@ -42,15 +42,14 @@ and a tower of 6 floors looks like below
 
 function towerBuilder(nFloors) {
 	const tower = [];
-	let numSpaces = nFloors * 2 - 1;
+
 	let currentFloor = 1;
 
 	while (currentFloor < nFloors + 1) {
-		numBlocks = currentFloor * 2 - 1;
+		let numBlocks = currentFloor * 2 - 1;
+		let numSpaces = (nFloors * 2 - 1 - numBlocks) / 2;
 		tower.push(
-			" ".repeat((numSpaces - numBlocks) / 2) +
-				"*".repeat(numBlocks) +
-				" ".repeat((numSpaces - numBlocks) / 2)
+			" ".repeat(numSpaces) + "*".repeat(numBlocks) + " ".repeat(numSpaces)
 		);
 		currentFloor++;
 	}
