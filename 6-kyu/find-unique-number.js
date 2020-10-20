@@ -15,13 +15,13 @@ The tests contain some very huge arrays, so think about performance.
 function findUniq(arr) {
 	for (i = 1; i < arr.length; i++) {
 		if (arr[i] === arr[0]) {
-			return arr.filter((num) => num !== arr[0])[0];
+			return arr.find((num) => num !== arr[i]);
 		} else if (arr[i] === arr[i + 1]) {
-			return arr.filter((num) => num !== arr[i])[0];
+			return arr.find((num) => num !== arr[i]);
 		}
 	}
 }
 
-// console.log(findUniq([1, 1, 1, 2, 1, 1]));
-// console.log(findUniq([0, 0, 0.55, 0, 0]));
+console.log(findUniq([1, 1, 1, 2, 1, 1]));
+console.log(findUniq([0, 0, 0.55, 0, 0]));
 console.log(findUniq([0, 1, 0]));
