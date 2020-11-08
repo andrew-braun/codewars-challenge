@@ -22,6 +22,7 @@ Example
 wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 */
 
+// Solution using reduce
 function wave(str) {
 	const wave = str.split("").reduce((waveArray, letter, idx) => {
 		if (letter !== " ") {
